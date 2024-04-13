@@ -1,0 +1,418 @@
+@import url(../CSS/common.css);
+
+/* #countdown {
+  width: 500px;
+  height: 500px;
+  background-color: #f38181;
+  position: absolute;
+} */
+#container {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+}
+.board {
+  width: 90%;
+  max-width: 646px;
+  height: 100%;
+  margin: 0 auto;
+
+  /* border: 5px solid yellow; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menu .header-nav .menu-nav-turn > p {
+  font-size: 25px;
+}
+.menu .header-nav .menu-nav-turn > p .lnr-pointer-right {
+  /* border: 1px solid #fff; */
+  margin-right: 10px;
+  font-size: 25px;
+}
+/* header style */
+.header-nav {
+  color: #fff;
+  font-size: 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding-bottom: 10px;
+  width: 600px;
+}
+.header-nav .menu-nav-turn {
+  display: flex;
+  /* flex: 1; */
+}
+.header-nav .menu-nav-point {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 25px;
+  /* margin: 0 100px; */
+  /* flex: 8; */
+}
+.header-nav .menu-nav-home {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  margin-left: 45px;
+
+  /* flex: 1; */
+}
+
+/* game-box style */
+.game {
+  border: 2px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  max-height: 646px;
+  text-align: center;
+  text-decoration-line: none;
+}
+.start-layout {
+  display: none;
+  width: 120%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  z-index: 100;
+  margin-top: -50px;
+}
+#start {
+  background-color: #0f0a0a;
+  border: 2px solid #fff;
+  color: #fff;
+  width: 900px;
+  height: 250px;
+  position: absolute;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* animation: gamestart 4000ms 2 alternate; */
+  padding-top: 80px;
+  animation: gamestart 6s ease-out forwards;
+}
+
+@keyframes gamestart {
+  0% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+#start > span {
+  flex: 6;
+  text-align: center;
+}
+#start > div {
+  font-size: 16px;
+  flex: 4;
+}
+
+.game .box-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-decoration-line: none;
+}
+
+.game .box-wrapper .box {
+  width: 32%;
+  height: 32%;
+  background: #fff;
+  display: flex;
+  border-radius: 5px;
+
+  transition: 0.5s;
+  margin: 4px;
+  cursor: pointer;
+}
+
+.game .box-wrapper .box.bgColorChange {
+  animation: ChangeEffect 400ms 2 alternate;
+}
+
+@keyframes ChangeEffect {
+  from {
+    background-color: #fff;
+  }
+
+  to {
+    background-color: #dea5a4;
+  }
+}
+
+/* .click {
+  animation: ChangeEffect 400ms 2 alternate;
+}
+
+@keyframes ChangeEffect {
+  from {
+    background-color: #fff;
+  }
+
+  to {
+    background-color: blue;
+  }
+} */
+
+/* modal style */
+.modal-layout {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  z-index: 100;
+}
+.modal-content {
+  z-index: 9999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  /* border: 3px solid #000; */
+  border-radius: 10px;
+
+  padding: 30px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+.modal-main {
+  margin-bottom: 20px;
+}
+.modal-title {
+  color: #f38181;
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 700;
+}
+.modal-output-iq {
+  font-size: 21px;
+  font-weight: bold;
+}
+.modal-text {
+  margin-top: 15px;
+}
+
+/* show class style */
+.show {
+  display: block;
+  animation: gameover 6s ease-out forwards;
+}
+
+@keyframes gameover {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.click {
+  border: 10px solid #f38181;
+}
+
+/* ////////////// */
+.stage-layout {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  z-index: 100;
+}
+.stage-content {
+  z-index: 9999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  /* border: 3px solid #000; */
+  border-radius: 10px;
+
+  padding: 30px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+.stage-main {
+  margin-bottom: 20px;
+}
+.stage-title {
+  color: #f38181;
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 700;
+}
+.stage-timer {
+  font-weight: bold;
+}
+.stage-output-box {
+  font-size: 21px;
+  font-weight: bold;
+}
+.stage-text {
+  margin-top: 15px;
+}
+
+/* show class style */
+.stageshow {
+  display: block;
+}
+
+/* blink 애니메이션 및 적용 class 생성 */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.blinking-text {
+  animation: blink 0.3s 3;
+}
+/* hover 적용 */
+.game .box-wrapper .hoverbox:hover {
+  background-color: #dea5a4;
+}
+a {
+  text-decoration-line: none !important;
+}
+
+.board .menu .header-nav .menu-nav-turn > p > span:first-child {
+  font-size: 18px;
+  /* display: block; */
+  position: relative;
+  top: -2px;
+}
+/* ================================== */
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
+
+body {
+  margin: 0;
+  height: 100%;
+  background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.button_container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 30%;
+}
+
+.description,
+.link {
+  font-family: "Amatic SC", cursive;
+  text-align: center;
+}
+
+.description {
+  font-size: 35px;
+}
+.btn.modal-close-button {
+  padding: 17px 76px;
+}
+.btn {
+  border: none;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #222;
+  padding: 17px 70px;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  /* width: 100px;
+  height: 100px; */
+  margin-top: 10px;
+  display: flex;
+  margin: 10 0;
+}
+
+.btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  background: #444141;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.btn:hover:after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+.link {
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.link a {
+  color: #000;
+  font-size: 25px;
+}
