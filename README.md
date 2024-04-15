@@ -67,36 +67,36 @@
 
 ### 메인 페이지
 
-![메인화면.png](./CSS/img/readme1.png)
+![main.png](./CSS/img/readme1.png)
 
 - ✅ 처음 사이트 접속 시 나오는 화면 스크롤 다운
 
-  ![메인화면스크롤내림.png](./CSS/img/raedmescrolldown.png)
+  ![mainscrolldown.png](./CSS/img/raedmescrolldown.png)
 
 - ✅ 게임 클릭 시 페이지 이동 후 게임 시작
 
-  ![게임카운트다운.png](./CSS/img/readmestart.png)
+  ![countdown.png](./CSS/img/readmestart.png)
 
 - ✅ 게임 시작 전 5초의 카운트 다운
 
-  ![게임시작.png](./CSS/img/readmepcturn.png)
+  ![gamestart.png](./CSS/img/readmepcturn.png)
 
 - ✅ 카운트 다운 종료 후 pc 차례일 때 순서대로 박스를 출력해서 보여줌
 
-  ![게임시작.png](./CSS/img/readmeuserturn.png)
+  ![ingame.png](./CSS/img/readmeuserturn.png)
 
 - ✅ pc 차례 종료 후 유저 차례로 변경 시 기억해둔 박스를 순서대로 클릭
 
-  ![다음단계.png](./CSS/img/readmenextstage.png)
+  ![nextstage.png](./CSS/img/readmenextstage.png)
 
 - ✅ 정답 클릭 시 자동으로 다음 단계로 넘어감
 
-  ![탈락단계.png](./CSS/img/readmerestart1.png)
+  ![gameover.png](./CSS/img/readmerestart1.png)
 
 - ✅ 오답 클릭 시 게임 종료 후 재시작 닫기 버튼 클릭 가능
 - ✅ 재시작 버튼 클릭 시 게임 재시작
 
-  ![닫기클릭.png](./CSS/img/readmeclosebutton.png)
+  ![closebottonclick.png](./CSS/img/readmeclosebutton.png)
 
   - ✅ 오답 클릭 시 나오는 창에서 닫기 버튼 클릭시 재시작 버튼 생성
 
