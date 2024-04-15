@@ -35,12 +35,12 @@
   - 깃헙 관리
 - 김한솔
   - https://github.com/hansolkim9
-  - 게임 실행 페이지 HTML5, css로 전체적인 구조 구현
+  - 게임 실행 페이지 HTML5, CSS로 전체적인 구조 구현
   - 게임 순서 바뀔 시 PC,User turn 구현
   - 게임 종료 시 스코어 기능
 - 김은지
   - https://github.com/eeungji
-  - 게임 선택 페이지 html5,css로 구조 구현
+  - 게임 선택 페이지 HTML5,CSS로 구조 구현
   - 게임 시작 전 카운트다운 기능
   - ppt 제작
 - 김수빈
