@@ -103,6 +103,6 @@
 ### 개발 기간
 
 <div>
-<img src="./CSS/img/readmeproject.png">
+<img src="./css/img/readmeproject.png">
 
 </div>
