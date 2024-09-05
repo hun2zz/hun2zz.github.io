@@ -1,0 +1,94 @@
+.headContainer {
+  width: 100%;
+  height: 200px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center; // 수직 중앙 정렬을 위해 추가
+
+  .leftHead {
+    width: 66.7%;
+    display: flex; // Flexbox 사용
+    align-items: start;
+    text-align: center;
+    flex-direction: column;
+    padding-left: 150px;
+    .name {
+      font-size: 2.3rem;
+      color: #080808;
+      font-weight: 500;
+    }
+    .type {
+      font-size: 1.5rem;
+      color: #2e2c2c;
+    }
+  }
+
+  .rightHead {
+    // ... (기존 코드 유지)
+
+    .linkImage {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      padding-bottom: 10px;
+      padding-right: 10px;
+
+      // 아이콘 링크 스타일 추가
+      li {
+        margin: 0 10px;
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          background-color: #f0f0f0;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #e0e0e0;
+          }
+
+          svg {
+            width: 43px;
+            height: 43px;
+            fill: #2e2c2c;
+          }
+        }
+      }
+    }
+
+    .link {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        position: relative;
+        text-decoration: none;
+        color: #2e2c2c;
+        transition: color 0.3s ease;
+
+        // 효과 1: 밑줄 애니메이션
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: -2px;
+          left: 0;
+          background-color: #000;
+          transform: scaleX(0);
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          &::after {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+}
