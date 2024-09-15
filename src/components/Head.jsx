@@ -6,7 +6,11 @@ const Head = () => {
     <div className={styles.headContainer}>
       <div className={styles.leftHead}>
         <div className={styles.name}>진상훈</div>
+
         <div className={styles.type}>풀 스택 개발자</div>
+        <a href="https://hits.seeyoufarm.com">
+          <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fhun2zz.github.io&count_bg=%23FFA500&title_bg=%23000000&icon=&icon_color=%23883C3C&title=view&edge_flat=true" />
+        </a>
       </div>
       <div className={styles.rightHead}>
         <ul className={styles.linkImage}>
@@ -46,26 +50,53 @@ const Head = () => {
           </li>
         </ul>
         <div className={styles.link}>
-          <p>
-            email:{" "}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="mailto:tkdgnsdldkdlel@naver.com"
-            >
-              tkdgnsdldkdlel@naver.com
-            </a>
-          </p>
-          <p>
-            blog:{" "}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://blog.naver.com/sanghun_0"
-            >
-              https://blog.naver.com/sanghun_0
-            </a>
-          </p>
+          <pre className={styles.codeBlock}>
+            <code>
+              <span className={styles.textCo}>const</span> Sanghun = {"{"}
+              <br />
+              &nbsp;&nbsp;<span className={styles.codeKey}>name</span>:
+              '진상훈',
+              <br />
+              &nbsp;&nbsp;<span className={styles.codeKey}>github</span>: '
+              <a
+                href="https://github.com/hun2zz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className={styles.text}>https://github.com/hun2zz</span>
+              </a>
+              ',
+              <br />
+              &nbsp;&nbsp;<span className={styles.codeKey}>blog</span>: '
+              <a
+                href="https://blog.naver.com/sanghun_0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className={styles.text}>
+                  https://blog.naver.com/sanghun_0
+                </span>
+              </a>
+              ',
+              <br />
+              &nbsp;&nbsp;<span className={styles.codeKey}>email</span>: '
+              <a href="mailto:tkdgnsdldkdlel@naver.com">
+                <span className={styles.text}>tkdgnsdldkdlel@naver.com</span>
+              </a>
+              ',
+              <br />
+              &nbsp;&nbsp;<span className={styles.codeKey}>phone</span>:
+              '010-5625-4949',
+              <br />
+              &nbsp;&nbsp;<span className={styles.codeKey}>age</span>:
+              '2002-10-05',
+              <br />
+              &nbsp;&nbsp;<span className={styles.codeKey}>location</span>:
+              'Yeongdeungpo-gu, Seoul, South Korea',
+              <br />
+              {"};"}
+            </code>
+          </pre>
         </div>
       </div>
     </div>

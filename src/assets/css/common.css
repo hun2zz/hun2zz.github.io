@@ -19,13 +19,17 @@ body {
 body {
   position: relative;
   margin: 0 auto;
-  padding: 0 50px !important;
+  /* padding: 0 250px !important; */
+  max-width: 1200px;
+  min-height: 100vh;
+  overflow-y: auto; /* 세로 스크롤 허용 */
 }
 
 .container {
   width: 100%;
   min-height: 100vh;
   padding: 0 30px;
+  overflow-y: auto; /* 세로 스크롤 허용 */
 }
 
 h1.title {
@@ -38,6 +42,7 @@ h1.title {
 @media (max-width: 1200px) {
   body {
     max-width: 100%;
+    padding: 0 5%;
   }
 }
 
@@ -48,7 +53,7 @@ h1.title {
   }
 
   body {
-    padding: 0 30px !important;
+    /* padding: 0 30px !important; */
   }
 
   .container {
@@ -62,7 +67,7 @@ h1.title {
 
 @media (max-width: 480px) {
   body {
-    padding: 0 20px !important;
+    /* padding: 0 20px !important; */
   }
 
   .container {
@@ -73,7 +78,11 @@ h1.title {
     font-size: 1.75rem;
   }
 }
-
+/* 이 부분을 제거하거나 아래와 같이 수정 */
 *::-webkit-scrollbar {
-  display: none;
+  width: 10px; /* 스크롤바 너비 */
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-gr); /* 스크롤바 색상 */
+  border-radius: 5px; /* 스크롤바 모서리 둥글게 */
 }
