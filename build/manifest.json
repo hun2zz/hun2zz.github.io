@@ -1,6 +1,6 @@
 {
-  "short_name": "진상훈 풀스택 개발자",
-  "name": "진상훈 풀스택 개발자",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
