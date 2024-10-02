@@ -1,0 +1,91 @@
+.overviewContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+
+  h2 {
+    font-size: 1rem;
+    align-self: flex-start;
+    text-align: left;
+    margin-right: auto;
+    letter-spacing: 2px;
+    padding: 40px 60px 40px 200px;
+  }
+  .contentContainer {
+    margin-bottom: 6rem;
+    margin-right: auto;
+    .content {
+      margin: 0;
+      line-height: 2;
+      text-align: left;
+      font-weight: 500;
+      color: #222;
+      font-size: 1.8rem;
+      line-height: 1.6;
+      word-break: keep-all;
+      padding: 0 200px;
+      .word {
+        display: inline-block;
+        transition: color 0.3s, font-weight 0.3s;
+      }
+      .emphasis {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 8rem;
+  color: #222;
+  font-weight: 700;
+  align-content: start;
+  align-self: flex-start; // 추가: 자신을 왼쪽으로 정렬
+}
+
+.profileImage {
+  width: 200px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  position: relative;
+  right: 30px;
+}
+
+.more {
+  color: #222;
+  letter-spacing: 2px;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .circle {
+    width: 0.4em;
+    height: 0.4em;
+    background-color: currentColor; // 텍스트 색상과 동일하게 설정
+    margin-right: 0.8rem;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+  }
+
+  &:hover .circle {
+    transform: scale(1.2);
+  }
+}
