@@ -1,19 +1,25 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom"; // 이 줄을 추가합니다.
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedCursor from "react-animated-cursor";
+import LoadingBar from "./LoadingBar"; // 이 줄을 추가합니다.
 import styles from "./Project.module.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Project = () => {
+  const navigate = useNavigate(); // 이 줄을 추가합니다.
   const galleryRef = useRef(null);
   const rightRef = useRef(null);
   const projectRefs = useRef([]);
   const photoRefs = useRef([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadingProgress, setLoadingProgress] = useState(0);
 
   const projects = [
     {
+      id: 1, // id를 추가합니다.
       title: "3on3",
       description:
         "대학생들의 소개팅을 위한 플랫폼. 사용자 친화적인 인터페이스와 매칭 알고리즘을 통해 대학생들의 만남을 주선합니다.",
@@ -32,6 +38,7 @@ const Project = () => {
       ],
     },
     {
+      id: 2, // id를 추가합니다.
       title: "애착 페이지",
       description:
         "사람들은 누구나 기댈 곳이 필요하고 생각을 비우거나 정리하는 시간이 필요하다고 느껴 여러 사람과 소통하면서 마음을 비울 수 있는 공간입니다",
@@ -106,8 +113,27 @@ const Project = () => {
     });
   }, []);
 
+  const handleViewProject = (projectId) => {
+    setIsLoading(true);
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress += 5;
+      setLoadingProgress(progress);
+      if (progress >= 100) {
+        clearInterval(interval);
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          setIsLoading(false);
+          setLoadingProgress(0);
+          navigate(`/project/${projectId}`);
+        }, 300);
+      }
+    }, 30);
+  };
+
   return (
     <div className={styles.projectContainer}>
+      {isLoading && <LoadingBar progress={loadingProgress} />}
       <AnimatedCursor
         innerSize={4}
         outerSize={30}
@@ -159,7 +185,12 @@ const Project = () => {
                     <li key={skillIndex}>{skill}</li>
                   ))}
                 </ul>
-                <button className={styles.exploreButton}>View Project</button>
+                <button
+                  className={styles.exploreButton}
+                  onClick={() => handleViewProject(project.id)}
+                >
+                  View Project
+                </button>
               </div>
             ))}
           </div>

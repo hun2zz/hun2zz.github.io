@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import styles from "./MarqueeComponent.module.scss";
 
-const MarqueeComponent = () => {
+const MarqueeComponent = ({ rotateAngle = -3, rotateAngle2 = -3 }) => {
   const [speed, setSpeed] = useState(50);
 
   useEffect(() => {
@@ -29,12 +29,12 @@ const MarqueeComponent = () => {
   return (
     <>
       <div className={styles.box}>
-        {/* <h2 className={styles.title}>GITHUB</h2> */}
         <Marquee
           className={styles.wrap}
           gradient={false}
           speed={speed}
           direction="right"
+          style={{ transform: `translateY(50px) rotate(${rotateAngle}deg)` }}
         >
           <div className={styles.textBox}>
             <svg
@@ -78,8 +78,12 @@ const MarqueeComponent = () => {
         </Marquee>
       </div>
       <div className={styles.box}>
-        {/* <h2 className={styles.title}>GITHUB</h2> */}
-        <Marquee className={styles.wrap2} gradient={false} speed={speed}>
+        <Marquee 
+          className={styles.wrap2} 
+          gradient={false} 
+          speed={speed}
+          style={{ transform: `rotate(${rotateAngle2}deg)` }}
+        >
           <div className={styles.textBox}>
             <svg
               role="img"
