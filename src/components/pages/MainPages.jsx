@@ -21,7 +21,7 @@ const MainPages = () => {
     // 첫 번째 애니메이션: Introduce 섹션에 들어갈 때 배경색 변경
     gsap.fromTo(
       containerRef.current,
-      { backgroundColor: "#222" },
+      { backgroundColor: "#001F3F" },
       {
         backgroundColor: "#eeff04",
         ease: "power2.inOut",
