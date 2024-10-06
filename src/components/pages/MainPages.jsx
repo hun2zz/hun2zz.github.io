@@ -39,7 +39,7 @@ const MainPages = () => {
       containerRef.current,
       { backgroundColor: "#eeff04" },
       {
-        backgroundColor: "#222",
+        backgroundColor: "#001f3f",
         ease: "none",
         scrollTrigger: {
           trigger: "#skill",
