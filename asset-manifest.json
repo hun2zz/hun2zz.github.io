@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0171d0e5.css",
-    "main.js": "/static/js/main.8dbb537a.js",
+    "main.css": "/static/css/main.4601ba6b.css",
+    "main.js": "/static/js/main.5da3a025.js",
     "static/media/myAss.png": "/static/media/myAss.57c6b4f06a2e6f4c7ce5.png",
     "static/media/buddies_project1.png": "/static/media/buddies_project1.a931d59636f5afadcec8.png",
     "static/media/buddies_project4.png": "/static/media/buddies_project4.21541438363cd3b297b7.png",
@@ -19,6 +19,7 @@
     "static/media/Untitled.png": "/static/media/Untitled.1827703e84a6c3aef2b1.png",
     "static/media/buddies_project2.png": "/static/media/buddies_project2.b162b735bca0221e2b44.png",
     "static/media/github.png": "/static/media/github.160f9126d3c647293ba0.png",
+    "static/media/buddies_project7.png": "/static/media/buddies_project7.c5032fbb566c93ad4c59.png",
     "static/media/gwating1.png": "/static/media/gwating1.81d4e54ed67107677117.png",
     "static/media/14-Nogal-XtBdIt-BF66bc26193ed5a.otf": "/static/media/14-Nogal-XtBdIt-BF66bc26193ed5a.37735539afab228eb538.otf",
     "static/media/12-Nogal-BdIt-BF66bc26191a3b5.otf": "/static/media/12-Nogal-BdIt-BF66bc26191a3b5.0b650b2da8b800a20838.otf",
@@ -45,11 +46,11 @@
     "static/media/BwGradualDEMO-Thin.otf": "/static/media/BwGradualDEMO-Thin.ef7c941b9dfcae5bd223.otf",
     "static/media/my.jpg": "/static/media/my.6a921fe1a01fc2da2bef.jpg",
     "index.html": "/index.html",
-    "main.0171d0e5.css.map": "/static/css/main.0171d0e5.css.map",
-    "main.8dbb537a.js.map": "/static/js/main.8dbb537a.js.map"
+    "main.4601ba6b.css.map": "/static/css/main.4601ba6b.css.map",
+    "main.5da3a025.js.map": "/static/js/main.5da3a025.js.map"
   },
   "entrypoints": [
-    "static/css/main.0171d0e5.css",
-    "static/js/main.8dbb537a.js"
+    "static/css/main.4601ba6b.css",
+    "static/js/main.5da3a025.js"
   ]
 }
