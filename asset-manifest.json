@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.4601ba6b.css",
-    "main.js": "/static/js/main.5da3a025.js",
+    "main.css": "/static/css/main.fb4854ba.css",
+    "main.js": "/static/js/main.bf63d037.js",
     "static/media/myAss.png": "/static/media/myAss.57c6b4f06a2e6f4c7ce5.png",
+    "static/media/buddies_project6.png": "/static/media/buddies_project6.cc063485d363eb9acf0f.png",
     "static/media/buddies_project1.png": "/static/media/buddies_project1.a931d59636f5afadcec8.png",
     "static/media/buddies_project4.png": "/static/media/buddies_project4.21541438363cd3b297b7.png",
-    "static/media/buddies_project6.png": "/static/media/buddies_project6.ca138ca232a09f7d207b.png",
+    "static/media/gwating.png": "/static/media/gwating.a0f2303fc146608dba50.png",
     "static/media/Pretendard-ExtraBold.woff": "/static/media/Pretendard-ExtraBold.f6491e200d1fb5c5917b.woff",
     "static/media/Pretendard-Bold.woff": "/static/media/Pretendard-Bold.1f1dbbbf311ffffcc770.woff",
     "static/media/Pretendard-SemiBold.woff": "/static/media/Pretendard-SemiBold.9f6b39f88e7e6a3fd0b2.woff",
@@ -14,6 +15,16 @@
     "static/media/Pretendard-Regular.woff": "/static/media/Pretendard-Regular.303253288b0ba99db532.woff",
     "static/media/Pretendard-ExtraLight.woff": "/static/media/Pretendard-ExtraLight.caca3ea2e764095a60e9.woff",
     "static/media/Pretendard-Thin.woff": "/static/media/Pretendard-Thin.e7b3f421a3a379ef4137.woff",
+    "static/media/gwating_project13.png": "/static/media/gwating_project13.4d938ef31fbd574eec0f.png",
+    "static/media/gwating_project12.png": "/static/media/gwating_project12.cebfc42747a9b75a50af.png",
+    "static/media/gwating_project11.png": "/static/media/gwating_project11.7b3f67972c60cb89f8d9.png",
+    "static/media/gwating_project15.png": "/static/media/gwating_project15.71a3a9685929c2a883c4.png",
+    "static/media/gwating_projec11.png": "/static/media/gwating_projec11.f5ab57ed54cb10496290.png",
+    "static/media/gwating_project6.png": "/static/media/gwating_project6.5b59f2b7e7cfd9e3f33e.png",
+    "static/media/gwating_project9.png": "/static/media/gwating_project9.7e2433cadfd3a722fcda.png",
+    "static/media/gwating_project5.png": "/static/media/gwating_project5.0f37079284224b81d668.png",
+    "static/media/gwating_project14.png": "/static/media/gwating_project14.1d8c6dde57418722c546.png",
+    "static/media/gwating_project4.png": "/static/media/gwating_project4.c8f456b82bcb3790cb58.png",
     "static/media/buddies_project5.png": "/static/media/buddies_project5.03a14987245c67200204.png",
     "static/media/buddies_project3.png": "/static/media/buddies_project3.15e4e3e4a48459567c32.png",
     "static/media/Untitled.png": "/static/media/Untitled.1827703e84a6c3aef2b1.png",
@@ -21,6 +32,12 @@
     "static/media/github.png": "/static/media/github.160f9126d3c647293ba0.png",
     "static/media/buddies_project7.png": "/static/media/buddies_project7.c5032fbb566c93ad4c59.png",
     "static/media/gwating1.png": "/static/media/gwating1.81d4e54ed67107677117.png",
+    "static/media/gwating_project3.png": "/static/media/gwating_project3.1ed4bd3a7aec667f85a8.png",
+    "static/media/gwating_project1.png": "/static/media/gwating_project1.eca9e4e860e6f0b8ef9f.png",
+    "static/media/gwating_project8.png": "/static/media/gwating_project8.37d145cb4e7db9e5c5b7.png",
+    "static/media/gwating_project2.png": "/static/media/gwating_project2.31341b60ab133d7082e4.png",
+    "static/media/gwating_project10.png": "/static/media/gwating_project10.e385b53611e9f9edf2c4.png",
+    "static/media/gwating_project7.png": "/static/media/gwating_project7.cf5821266d56b9a5e88d.png",
     "static/media/14-Nogal-XtBdIt-BF66bc26193ed5a.otf": "/static/media/14-Nogal-XtBdIt-BF66bc26193ed5a.37735539afab228eb538.otf",
     "static/media/12-Nogal-BdIt-BF66bc26191a3b5.otf": "/static/media/12-Nogal-BdIt-BF66bc26191a3b5.0b650b2da8b800a20838.otf",
     "static/media/10-Nogal-MdIt-BF66bc26195570a.otf": "/static/media/10-Nogal-MdIt-BF66bc26195570a.6f40df4081d3977e0ed6.otf",
@@ -46,11 +63,11 @@
     "static/media/BwGradualDEMO-Thin.otf": "/static/media/BwGradualDEMO-Thin.ef7c941b9dfcae5bd223.otf",
     "static/media/my.jpg": "/static/media/my.6a921fe1a01fc2da2bef.jpg",
     "index.html": "/index.html",
-    "main.4601ba6b.css.map": "/static/css/main.4601ba6b.css.map",
-    "main.5da3a025.js.map": "/static/js/main.5da3a025.js.map"
+    "main.fb4854ba.css.map": "/static/css/main.fb4854ba.css.map",
+    "main.bf63d037.js.map": "/static/js/main.bf63d037.js.map"
   },
   "entrypoints": [
-    "static/css/main.4601ba6b.css",
-    "static/js/main.5da3a025.js"
+    "static/css/main.fb4854ba.css",
+    "static/js/main.bf63d037.js"
   ]
 }
