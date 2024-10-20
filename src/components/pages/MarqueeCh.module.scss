@@ -3,28 +3,32 @@
 }
 
 .wrap {
-  color: #eeff04;
+  color: #732f20;
 }
 .textBox {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-right: 4rem;
+  margin-right: 2.2rem;
 
   .text {
     margin-right: 20px;
-    font-size: 6rem;
+    font-size: 10rem;
     white-space: nowrap;
-    cursor: pointer;
-    font-weight: 700;
+    font-weight: 900;
   }
 
   .primaryEmphasis {
-    color: #eeff04; // 강조색 (원하는 색상으로 변경 가능)
+    color: #0d0d0d; // 강조색 (원하는 색상으로 변경 가능)
   }
 
   .secondaryEmphasis {
-    color: #fff; // 두 번째 강조색 (로얄 블루)
+    color: #732f20; // 두 번째 강조색 (로얄 블루)
+  }
+  .threeEmphasis {
+    color: #f2f2f2;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: #732f20;
   }
 }
 
@@ -32,8 +36,8 @@
   width: 20px;
   height: 20px;
   background-color: transparent;
-  border: 2px solid #eeff04;
-  margin-left: 3rem;
+  border: 2px solid #732f20;
+  margin-left: 1rem;
   position: relative;
   animation: rotate 4s linear infinite;
 }
@@ -44,7 +48,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  border: 2px solid #eeff04;
+  border: 2px solid #732f20;
   left: -2px;
   top: -2px;
   animation: pulse 2s ease-out infinite;
@@ -72,4 +76,8 @@
     transform: scale(1.5);
     opacity: 0;
   }
+}
+
+.marq2 {
+  transform: translateY(-500px);
 }

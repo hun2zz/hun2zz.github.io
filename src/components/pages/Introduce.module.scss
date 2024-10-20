@@ -15,11 +15,16 @@
     text-align: left;
     margin-right: auto;
     letter-spacing: 2px;
-    padding: 40px 60px 40px 200px;
+    padding: 40px 0;
+    width: 1200px;
+    margin: 0 auto;
   }
   .contentContainer {
-    margin-bottom: 6rem;
     margin-right: auto;
+    width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+
     .content {
       margin: 0;
       line-height: 2;
@@ -29,7 +34,8 @@
       font-size: 1.8rem;
       line-height: 1.6;
       word-break: keep-all;
-      padding: 0 200px;
+      // padding: 0 200px;
+    
       .word {
         display: inline-block;
         transition: color 0.3s, font-weight 0.3s;
@@ -43,7 +49,7 @@
 
 .title {
   font-size: 8rem;
-  color: #222;
+  color: #f2f2f2;
   font-weight: 700;
   align-content: start;
   align-self: flex-start; // 추가: 자신을 왼쪽으로 정렬
@@ -61,15 +67,17 @@
 }
 
 .more {
-  color: #222;
+  color: #f2f2f2;
   letter-spacing: 2px;
   text-align: center;
-  width: 100%;
+  width: 180px;
+  line-height: 40px;
+  margin: 0 auto;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-
+  cursor: none;
   &:hover {
     transform: translateY(-5px);
   }

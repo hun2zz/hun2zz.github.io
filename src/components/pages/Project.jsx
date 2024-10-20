@@ -1,29 +1,28 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom"; // 이 줄을 추가합니다.
+import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import AnimatedCursor from "react-animated-cursor";
-import LoadingBar from "./LoadingBar"; // 이 줄을 추가합니다.
+import LoadingBar from "./LoadingBar"; // LoadingBar 컴포넌트를 import 해야 합니다
 import styles from "./Project.module.scss";
+import gwating from "../../assets/images/gwating1.png";
+import ox from "../../assets/images/myAss.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Project = () => {
-  const navigate = useNavigate(); // 이 줄을 추가합니다.
-  const galleryRef = useRef(null);
-  const rightRef = useRef(null);
+  const navigate = useNavigate();
+  const containerRef = useRef(null);
   const projectRefs = useRef([]);
-  const photoRefs = useRef([]);
   const [isLoading, setIsLoading] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
+  const [currentProjectId, setCurrentProjectId] = useState(null);
 
   const projects = [
     {
-      id: 1, // id를 추가합니다.
-      title: "3on3",
+      id: "1",
+      title: "Gwating.",
       description:
         "대학생들의 소개팅을 위한 플랫폼. 사용자 친화적인 인터페이스와 매칭 알고리즘을 통해 대학생들의 만남을 주선합니다.",
-      color: "crimson",
       skills: [
         "Java",
         "Spring Boot",
@@ -36,13 +35,13 @@ const Project = () => {
         "JPA",
         "React",
       ],
+      image: `${gwating}`,
     },
     {
-      id: 2, // id를 추가합니다.
-      title: "애착 페이지",
+      id: "2",
+      title: "Buddies.",
       description:
-        "사람들은 누구나 기댈 곳이 필요하고 생각을 비우거나 정리하는 시간이 필요하다고 느껴 여러 사람과 소통하면서 마음을 비울 수 있는 공간입니다",
-      color: "MediumSeaGreen",
+        "마음의 안식처와 소통의 공간. 생각을 정리하고 타인과 교류하며 내면의 평화를 찾는 곳입니다.",
       skills: [
         "Java",
         "Spring Boot",
@@ -51,167 +50,118 @@ const Project = () => {
         "MyBatis",
         "WebSocket",
       ],
+      image: `${ox}`,
     },
-    // {
-    //   title: "AI Chat",
-    //   description:
-    //     "인공지능 기반의 대화형 챗봇 서비스. 자연어 처리 기술을 활용하여 사용자와 자연스러운 대화를 나눕니다.",
-    //   color: "dodgerblue",
-    //   skills: ["Python", "TensorFlow", "NLP"],
-    // },
+
+    // 다른 프로젝트들 추가...
   ];
 
-  const [cursorText, setCursorText] = useState("");
-  const [cursorVariant, setCursorVariant] = useState("default");
-
-  const onEnterFrame = () => {
-    setCursorText("View");
-    setCursorVariant("project");
-    document.body.style.cursor = "none";
-  };
-
-  const onLeaveFrame = () => {
-    setCursorText("");
-    setCursorVariant("default");
-    document.body.style.cursor = "auto";
-  };
-
   useEffect(() => {
-    let mm = gsap.matchMedia();
-
-    mm.add("(min-width: 600px)", () => {
-      ScrollTrigger.create({
-        trigger: galleryRef.current,
-        start: "top top",
-        end: "bottom+=2% bottom", // 여기를 수정했습니다
-        pin: rightRef.current,
-      });
-
-      gsap.set(photoRefs.current.slice(1), { yPercent: 101 });
-
+    const ctx = gsap.context(() => {
       projectRefs.current.forEach((project, index) => {
-        if (index === 0) return;
-
-        let headline = project.querySelector("h1");
-        let animation = gsap
-          .timeline()
-          .to(photoRefs.current[index], { yPercent: 0 })
-          .set(photoRefs.current[index - 1], { autoAlpha: 0 });
-
         ScrollTrigger.create({
-          trigger: headline,
-          start: "top 80%",
-          end: "top 40%", // 끝 지점을 더 위로 올림
-          animation: animation,
-          scrub: 1,
+          trigger: project,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+          onUpdate: (self) => {
+            gsap.to(project, {
+              opacity: self.progress > 0.5 ? 1 - (self.progress - 0.5) * 2 : 1,
+              scale: 1 + self.progress * -0.09,
+              y: -100 * self.progress,
+              z: 500,
+            });
+          },
         });
       });
+    }, containerRef);
 
-      return () => {
-        ScrollTrigger.getAll().forEach((t) => t.kill());
-      };
-    });
+    return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isLoading]);
+
   const handleViewProject = (projectId) => {
+    setCurrentProjectId(projectId);
     setIsLoading(true);
-    let progress = 0;
-    const interval = setInterval(() => {
-      progress += 5;
-      setLoadingProgress(progress);
-      if (progress >= 100) {
-        clearInterval(interval);
-        window.scrollTo(0, 0);
-        setTimeout(() => {
-          setIsLoading(false);
-          setLoadingProgress(0);
-          navigate(`/project/${projectId}`);
-        }, 300);
-      }
-    }, 30);
+    setLoadingProgress(0);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        let progress = 0;
+        const interval = setInterval(() => {
+          progress += 1;
+          setLoadingProgress(progress);
+          if (progress >= 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+              handleAnimationComplete(projectId);
+            }, 1000); // 0.5초 대기 후 페이지 전환
+          }
+        }, 10);
+      });
+    });
+  };
+
+  const handleAnimationComplete = (projectId) => {
+    // ScrollTrigger 인스턴스 제거
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
+    setIsLoading(false);
+    setLoadingProgress(0);
+    navigate(`/project/${projectId}`);
   };
 
   return (
-    <div className={styles.projectContainer}>
+    <div ref={containerRef} className={styles.projectContainer}>
+      <h2 className={styles.bTitle}>featured projects,</h2>
       {isLoading && <LoadingBar progress={loadingProgress} />}
-      <AnimatedCursor
-        innerSize={4}
-        outerSize={30}
-        color={cursorVariant === "project" ? "#eeff04" : "#ffffff"}
-        innerScale={1}
-        outerScale={1}
-        outerAlpha={0}
-        hasBlendMode={true}
-        outerStyle={{
-          border: `1.5px solid ${
-            cursorVariant === "project" ? "#eeff04" : "#ffffff"
-          }`,
-        }}
-        innerStyle={{
-          backgroundColor: cursorVariant === "project" ? "#eeff04" : "#ffffff",
-        }}
-        clickables={[
-          "a",
-          'input[type="text"]',
-          'input[type="email"]',
-          'input[type="number"]',
-          'input[type="submit"]',
-          'input[type="image"]',
-          "label[for]",
-          "select",
-          "textarea",
-          "button",
-          ".link",
-        ]}
-        textColor={cursorVariant === "project" ? "#000000" : "#ffffff"}
-        text={cursorText}
-        showSystemCursor={false}
-      />
+      <div className={styles.projectTitleContainer}></div>
+      {projects.map((project, index) => (
+        <div
+          key={project.id}
+          ref={(el) => (projectRefs.current[index] = el)}
+          className={styles.projectSection}
+        >
+          <div className={styles.projectImage}>
+            <img src={project.image} alt={project.title} />
+          </div>
+          <div className={styles.projectContent}>
+            <div>
+              {/* <div className={styles.projectTitle}>PROJECT01 */}
+              {/* <span className={styles.star}>
+                <img
+                  src="https://framerusercontent.com/images/iPTydRIhKgOD4qBPAkwwMMT5Aak.png"
+                  alt=""
+                />
+              </span>*/}
+              {/* </div>  */}
 
-      <div className={styles.spacer}></div>
-      <div className={styles.gallery} ref={galleryRef}>
-        <div className={styles.left}>
-          <div className={styles.desktopContent}>
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className={styles.desktopContentSection}
-                ref={(el) => (projectRefs.current[index] = el)}
-              >
-                <h1>{project.title}</h1>
-                <p>{project.description}</p>
-                <ul className={styles.skillsList}>
-                  {project.skills.map((skill, skillIndex) => (
-                    <li key={skillIndex}>{skill}</li>
-                  ))}
-                </ul>
-                <button
-                  className={styles.exploreButton}
-                  onClick={() => handleViewProject(project.id)}
-                >
-                  View Project
-                </button>
+              <h2>{project.title}</h2>
+
+              <p>{project.description}</p>
+              <div className={styles.skills}>
+                {project.skills.map((skill, skillIndex) => (
+                  <div key={skillIndex} className={styles.skill}>
+                    {skill}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <button
+              onClick={() => handleViewProject(project.id)}
+              className={styles.exploreButton}
+            >
+              View Details
+            </button>
           </div>
         </div>
-        <div className={styles.right} ref={rightRef}>
-          <div
-            className={styles.desktopPhotos}
-            onMouseEnter={onEnterFrame}
-            onMouseLeave={onLeaveFrame}
-          >
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className={`${styles.desktopPhoto} ${styles[project.color]}`}
-                ref={(el) => (photoRefs.current[index] = el)}
-              ></div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className={styles.spacer}></div>
+      ))}
     </div>
   );
 };

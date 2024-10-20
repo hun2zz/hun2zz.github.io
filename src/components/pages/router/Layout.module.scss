@@ -1,0 +1,22 @@
+.layoutContainer {
+  position: relative;
+  min-height: 100vh;
+}
+
+.navContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
+}
+
+.mainContent {
+  position: relative;
+  z-index: 1;
+}

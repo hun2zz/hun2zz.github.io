@@ -48,9 +48,9 @@ const Introduce = () => {
       .fromTo(title, { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 1 }) // 타이틀 애니메이션
       .fromTo(
         content.querySelectorAll(`.${styles.word}:not(.${styles.emphasis})`), // 일반 단어
-        { color: "#22222220", fontWeight: 300 }, // 초기 상태: 글자 회색, 폰트 두께 300
+        { color: "#73706C", fontWeight: 300 }, // 초기 상태: 글자 회색, 폰트 두께 300
         {
-          color: "#222", // 애니메이션 종료 후: 글자 검정색
+          color: "#F2F2F2", // 애니메이션 종료 후: 글자 검정색
           fontWeight: 300, // 폰트 두께 조정
           stagger: 0.05, // 애니메이션 간격 조정 (각 단어마다)
           ease: "power1.inOut", // 애니메이션 효과

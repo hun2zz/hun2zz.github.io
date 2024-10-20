@@ -13,17 +13,84 @@ gsap.registerPlugin(ScrollTrigger);
 
 const MainPages = () => {
   const containerRef = useRef(null);
+  const canvasRef = useRef(null);
 
   useEffect(() => {
-    // ScrollTrigger 초기화
-    ScrollTrigger.refresh();
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    let animationFrameId;
+    let particles = [];
 
-    // 첫 번째 애니메이션: Introduce 섹션에 들어갈 때 배경색 변경
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initParticles();
+    };
+
+    const initParticles = () => {
+      particles = [];
+      const particleCount = 100;
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 2 + 1,
+          dx: (Math.random() - 0.5) * 0.5,
+          dy: (Math.random() - 0.5) * 0.5,
+        });
+      }
+    };
+
+    const drawParticles = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+
+      particles.forEach((particle) => {
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        particle.x += particle.dx;
+        particle.y += particle.dy;
+
+        if (particle.x < 0 || particle.x > canvas.width) particle.dx *= -1;
+        if (particle.y < 0 || particle.y > canvas.height) particle.dy *= -1;
+      });
+
+      animationFrameId = requestAnimationFrame(drawParticles);
+    };
+
+    const startParticles = () => {
+      canvas.style.opacity = "1";
+      if (!animationFrameId) {
+        drawParticles();
+      }
+    };
+
+    const stopParticles = () => {
+      canvas.style.opacity = "0";
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = null;
+    };
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    ScrollTrigger.create({
+      trigger: "#introduce",
+      start: "top bottom",
+      end: "bottom top",
+      onEnter: startParticles,
+      onLeave: stopParticles,
+      onEnterBack: startParticles,
+      onLeaveBack: stopParticles,
+    });
+
     gsap.fromTo(
       containerRef.current,
-      { backgroundColor: "#001F3F" },
+      { backgroundColor: "#F2F2F2" },
       {
-        backgroundColor: "#eeff04",
+        backgroundColor: "#0D0D0D",
         ease: "power2.inOut",
         scrollTrigger: {
           trigger: "#introduce",
@@ -34,12 +101,11 @@ const MainPages = () => {
       }
     );
 
-    // 두 번째 애니메이션: Skill 섹션으로 이동할 때 배경색 원래 색으로 변경
     gsap.fromTo(
       containerRef.current,
-      { backgroundColor: "#eeff04" },
+      { backgroundColor: "#0D0D0D" },
       {
-        backgroundColor: "#001f3f",
+        backgroundColor: "#F2F2F2",
         ease: "none",
         scrollTrigger: {
           trigger: "#skill",
@@ -50,33 +116,32 @@ const MainPages = () => {
       }
     );
 
-    // ScrollTrigger 새로고침하여 설정 반영
     ScrollTrigger.refresh();
 
     return () => {
+      window.removeEventListener("resize", resizeCanvas);
+      cancelAnimationFrame(animationFrameId);
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
 
   return (
     <div ref={containerRef} className={styles.container}>
-      <div id="intro" className={styles.section}>
-        <Intro />
-        <MarqueeComponent rotateAngle={-5} rotateAngle2={2} />
-      </div>
-      <div id="introduce" className={styles.section}>
-        <Introduce />
-      </div>
-      <div id="skill" className={styles.section}>
-        <Skill />
-        <MarqueeCh
-          direction="left"
-          texts={["BACKEND", "&", "FRONTEND", "HUN"]}
-          rotateAngle={-3}
-        />
-      </div>
-      <div id="project" className={styles.section}>
-        <Project />
+      <canvas ref={canvasRef} className={styles.backgroundCanvas} />
+      <div className={styles.content}>
+        <div id="intro" className={styles.section}>
+          <Intro />
+          <MarqueeComponent rotateAngle={-5} rotateAngle2={2} />
+        </div>
+        <div id="introduce" className={styles.section}>
+          <Introduce />
+        </div>
+        <div id="skill" className={styles.section}>
+          <Skill />
+        </div>
+        <div id="project" className={styles.section}>
+          <Project />
+        </div>
       </div>
     </div>
   );

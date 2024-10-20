@@ -1,0 +1,76 @@
+.projectBodyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 900px;
+  margin: 0 auto;
+  // letter-spacing: 2px;
+  color: #0d0d0d;
+  border-bottom: 1px solid #9a9a9a;
+  .projectBodyInfo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 100px;
+  }
+  .projectBodyTitle {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 100px;
+  }
+  .projectBodyText {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 100px;
+    color: #9a9a9a;
+  }
+  .projectBodyImage {
+    width: 900px;
+    margin-bottom: 100px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .imageGallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 100px;
+
+    .galleryItem {
+      width: calc(50% - 20px);
+      // max-width: 300px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.projectBodyImage1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+
+  img {
+    max-width: 400px;
+    max-height: 800px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}

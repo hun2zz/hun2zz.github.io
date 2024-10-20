@@ -1,0 +1,29 @@
+.footer {
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  color: #0d0d0d;
+  .footerOne {
+    margin: 100px 0;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    .text {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      word-break: break-all;
+      background: linear-gradient(0deg, #bfbdba 0 100%);
+      display: inline;
+      color: #0d0d0d;
+      width: fit-content;
+      padding: 0 2px;
+
+      &:hover {
+        color: #73706c;
+        transition: color 0.5s;
+      }
+    }
+  }
+}

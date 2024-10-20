@@ -1,47 +1,45 @@
-import React, { useState, useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import React, { useState, useEffect, useCallback } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import styles from "./Layout.module.scss";
 import NavigationBar from "../NavigationBar";
 import ContactMe from "../ContactMe";
 
 const Layout = () => {
   const [isNavHidden, setIsNavHidden] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const location = useLocation();
+
+  const handleScroll = useCallback(() => {
+    const currentScrollPos = window.pageYOffset;
+    const isScrollingDown = currentScrollPos > prevScrollPos;
+
+    setIsNavHidden(isScrollingDown && currentScrollPos > 10);
+    setPrevScrollPos(currentScrollPos);
+  }, [prevScrollPos]);
 
   useEffect(() => {
-    let lastScrollTop = 0;
-
-    const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollTop > lastScrollTop && scrollTop > 100) {
-        setIsNavHidden(true);
-      } else {
-        setIsNavHidden(false);
-      }
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    };
-
     window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
-    <>
+    <div className={styles.layoutContainer}>
       <div
         className={`${styles.navContainer} ${isNavHidden ? styles.hidden : ""}`}
       >
         <NavigationBar />
       </div>
-      <main>
+      <main className={styles.mainContent}>
         <Outlet />
       </main>
       <footer>
         <ContactMe />
       </footer>
-    </>
+    </div>
   );
 };
 

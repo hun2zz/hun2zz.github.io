@@ -1,13 +1,23 @@
-import React from 'react';
-import styles from './LoadingBar.module.scss';
+import React, { useEffect, useState } from "react";
+import styles from "./LoadingBar.module.scss";
 
 const LoadingBar = ({ progress }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
-    <div className={styles.loadingBarContainer}>
-      <div 
-        className={styles.loadingBar} 
-        style={{ width: `${progress}%` }}
-      ></div>
+    <div className={`${styles.loadingContainer} ${isVisible ? styles.visible : ''}`}>
+      <div
+        className={styles.loadingCircle}
+        style={{
+          clipPath: `circle(${progress}% at 50% 100%)`,
+        }}
+      >
+        <div className={styles.content}>PROJECT</div>
+      </div>
     </div>
   );
 };

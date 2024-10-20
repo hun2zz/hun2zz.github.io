@@ -1,0 +1,97 @@
+.worksDetailContent {
+  padding: 2rem;
+  color: #0d0d0d;
+  margin-top: 100px;
+}
+
+.worksDetailContentInner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.worksDetailHead {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.worksDetailName {
+  margin-bottom: 2rem;
+  color: #732f20;
+}
+
+.worksDetailNameMain {
+  font-size: 6rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 5px;
+  font-weight: 800;
+}
+
+.worksDetailNameSub {
+  font-size: 1.6rem;
+  color: #888;
+}
+
+.workDetailColumn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #9a9a9a;
+}
+
+.leftColumn,
+.middleColumn,
+.rightColumn {
+  margin-right: 2rem;
+  color: #9a9a9a;
+  line-height: 1.2;
+  word-break: break-all;
+  padding: 10px;
+  font-size: 17px;
+
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.leftColumn {
+  width: 100px;
+}
+
+.middleColumn {
+  width: 600px;
+}
+
+.rightColumn {
+  width: 300px;
+}
+
+.website {
+  background: linear-gradient(0deg, #bfbdba 0 100%);
+  display: inline-block;
+  color: #0d0d0d;
+  &:hover {
+    color: #73706c;
+    transition: color 0.5s;
+  }
+}
+
+.skillList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.skillItem {
+  background-color: #f0f0f0;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.creditContent {
+  display: flex;
+  justify-content: space-between;
+}

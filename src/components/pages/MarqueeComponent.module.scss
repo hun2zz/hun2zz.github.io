@@ -6,35 +6,32 @@
   text-align: center;
   font-weight: 800;
   width: 500px;
-  color: #222;
-  border-right: solid 1px #eeff04;
-  background-color: #eeff04;
+  color: #732f20;
+  border-right: solid 1px #0d0d0d;
+  background-color: #0d0d0d;
   border-radius: 24px;
 }
 .wrap {
   // transform: translateY(50px) rotate(-5deg);
-  border-top: solid 2px #eeff04;
-  border-bottom: solid 2px #eeff04;
-  padding: 0.7rem 0 1rem;
-  color: #eeff04;
+  border-top: solid 2px #0d0d0d;
+  border-bottom: solid 2px #0d0d0d;
+  color: #0d0d0d;
 }
 .iccons {
   width: 2.5rem;
   height: 2.5rem;
   margin-right: 1rem;
   flex-shrink: 0;
-  fill: #eeff04;
+  fill: #0d0d0d;
 }
 .wrap2 {
-  padding: 0.7rem 0 1rem;
-  // transform: rotate(2deg);
-  color: #222;
-  background-color: #eeff04;
+  background-color: #0d0d0d;
+  color: #f2f2f2;
 }
 .link {
   display: flex;
   align-items: center;
-  color: #333;
+  color: #f2f2f2;
   text-decoration: none;
 }
 
@@ -47,15 +44,46 @@
     width: 3rem;
     height: 3rem;
     margin-right: 10px;
-    fill: #222;
+    fill: #0d0d0d;
   }
 
-  .text {
+  .text2 {
     margin-right: 20px;
-    font-size: 1.8rem;
-    font-style: italic;
+    font-size: 6rem;
     white-space: nowrap;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 700;
+    // -webkit-text-stroke-width: 3px;
+    // -webkit-text-stroke-color: #0d0d0d;color: transparent;
+  }
+  .text {
+    margin-right: 20px;
+    font-size: 6rem;
+    white-space: nowrap;
+    cursor: pointer;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #0d0d0d;
+  }
+  .text3 {
+    margin-right: 20px;
+    font-size: 6rem;
+    white-space: nowrap;
+    cursor: pointer;
+    font-weight: 700;
+    color: #f2f2f2;
+    // -webkit-text-stroke-width: 3px;
+    // -webkit-text-stroke-color: #0d0d0d;
+  }
+  .text4 {
+    margin-right: 20px;
+    font-size: 6rem;
+    white-space: nowrap;
+    cursor: pointer;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #f2f2f2;
   }
 }
