@@ -20,7 +20,9 @@ const NavigationBar = ({
   ];
 
   const handleNavigation = (id) => {
-    if (id === "ABOUT") {
+    if (id === "HOME") {
+      navigate("/");
+    } else if (id === "ABOUT") {
       setIsLoading(true);
       setLoadingProgress(0);
       const interval = setInterval(() => {
@@ -36,8 +38,8 @@ const NavigationBar = ({
           return prevProgress + 1;
         });
       }, 10);
-    } else if (scrollInstance) {
-      scrollInstance.scrollTo(`#${id}`, {
+    } else if (id === "PROJECT" && scrollInstance) {
+      scrollInstance.scrollTo("#project", {
         offset: 0,
         duration: 500,
         easing: [0.25, 0.0, 0.35, 1.0],
@@ -56,7 +58,7 @@ const NavigationBar = ({
   return (
     <nav className={styles.navbar}>
       {isLoading && <LoadingBar progress={loadingProgress} />}
-      <div className={styles.logoContainer}>
+      <div className={styles.logoContainer} onClick={() => navigate("/")}>
         <p className={styles.profileImage}>
           <img src={profileImage} alt="프로필" />
         </p>

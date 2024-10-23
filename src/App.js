@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AnimatedCursor from "react-animated-cursor";
 import MainPages from "./components/pages/MainPages";
 import Layout from "./components/pages/router/Layout";
 import ProjectDetail from "./components/pages/ProjectDetail";
-import About from './components/pages/About';
+import About from "./components/pages/About";
 
 function App() {
   const [cursorText, setCursorText] = useState("");
@@ -15,18 +15,18 @@ function App() {
       <AnimatedCursor
         innerSize={4}
         outerSize={30}
-        color={cursorVariant === "project" ? "#732F20" : "#732F20"}
+        color={cursorVariant === "project" ? "#ffffff" : "#ffffff"}
         innerScale={1}
         outerScale={1}
         outerAlpha={0}
         hasBlendMode={true}
         outerStyle={{
           border: `1.5px solid ${
-            cursorVariant === "project" ? "#732F20" : "#732F20"
+            cursorVariant === "project" ? "#ffffff" : "#ffffff"
           }`,
         }}
         innerStyle={{
-          backgroundColor: cursorVariant === "project" ? "#732F20" : "#732F20",
+          backgroundColor: cursorVariant === "project" ? "#ffffff" : "#ffffff",
         }}
         clickables={[
           "a",
