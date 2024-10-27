@@ -1,49 +1,80 @@
 .container {
   display: flex;
-  flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   justify-content: center;
-  // padding-left: 300px;
-  height: 85vh;
-  padding-top: 6vh;
-  text-align: left;
-  width: 1000px;
-  margin: 0 auto;
+  align-items: center;
+  padding: 0 5%;
 
-  .hellopage {
-    font-weight: 800;
-    font-size: 5rem;
-    color: #0d0d0d;
-    line-height: 1;
+  .hellopage2 {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
     display: flex;
-    flex-direction: column;
-    letter-spacing: 2px;
+    justify-content: space-between;
+    align-items: center;
 
-    .fullstack {
-      font-size: 10rem;
-      align-self: flex-start;
-    }
-    .devloper {
-      width: 100%;
-      font-size: 10rem;
-      text-align: right;
-      align-self: flex-start;
-      // margin-left: 300px;
-    }
-  }
-  .intro {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #73706c;
-    font-weight: 400;
-    margin-top: 40px;
-    text-align: center;
-    padding-top: 4rem;
-    b {
-      text-transform: uppercase;
+    .hellopage {
+      position: relative;
+      z-index: 3;
+      width: 60%;
 
-      font-weight: 400;
+      font-weight: 900;
+      color: #fff;
+
+      .fullstack {
+        font-family: "Playfair Display", serif;
+        font-size: 10rem;
+        font-style: italic;
+        margin-bottom: -80px;
+        white-space: nowrap;
+      }
+
+      .devloper {
+        font-family: "Playfair Display", serif;
+        font-size: 10rem;
+        font-style: italic;
+        margin-left: 20%;
+        white-space: nowrap;
+      }
+      .intro {
+        font-size: 1.5rem;
+        margin-top: 20px;
+        font-weight: 100;
+        text-align: end;
+        margin-right: 10%;
+        margin-bottom: 10%;
+      }
+    }
+
+    .year {
+      position: absolute;
+      left: 0%;
+      bottom: 43%;
+      font-size: 8.5rem;
+      font-weight: bold;
+      color: #545050;
+      opacity: 0.8;
+      z-index: 2;
+      font-style: italic;
+    }
+
+    .image {
+      position: relative;
+      z-index: 1;
+      width: 500px;
+      height: 500px;
+      overflow: hidden;
+
+      .photo {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        filter: grayscale(100%) brightness(80%); // 흑백 효과와 밝기 조절
+        opacity: 1; // 투명도 조절 (0.0 ~ 1.0)
+        transition: all 0.1s ease; // 이미지 전환 효과
+      }
     }
   }
 }
