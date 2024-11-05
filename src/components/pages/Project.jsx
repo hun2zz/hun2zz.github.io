@@ -88,6 +88,7 @@ const Project = () => {
   }, [isLoading]);
 
   const handleViewProject = (projectId) => {
+    console.log("Button clicked:", projectId); // 디버깅용 로그 추가
     setCurrentProjectId(projectId);
     setIsLoading(true);
     setLoadingProgress(0);
@@ -154,10 +155,16 @@ const Project = () => {
               </div>
             </div>
             <button
-              onClick={() => handleViewProject(project.id)}
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log("버튼 클릭됨:", project.id); // 디버깅 로그
+                handleViewProject(project.id);
+              }}
               className={styles.exploreButton}
             >
-              View Details
+              View Details <b>→</b>
             </button>
           </div>
         </div>

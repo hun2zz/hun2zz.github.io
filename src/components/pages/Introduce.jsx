@@ -40,6 +40,7 @@ const Introduce = () => {
 
           pin: true, // Introduce 섹션 고정
           scrub: true, // 스크롤에 따라 애니메이션 진행
+          markers: true,
           onEnter: () => {
             ScrollTrigger.refresh(); // 애니메이션 시작 시 새로고침
           },
