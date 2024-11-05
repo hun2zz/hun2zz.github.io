@@ -29,6 +29,7 @@
   align-items: center;
   // padding: 0.5rem 1rem;
   // background-color: #e95011;
+  z-index: 999; // z-index 추가
   color: #732f20;
   text-decoration: none;
   font-size: 1.5rem;
@@ -37,7 +38,6 @@
   // transition: background-color 0.3s ease;
   font-style: italic;
   border: none;
-  cursor: pointer;
   background-color: transparent;
   margin-left: auto;
   width: fit-content;
