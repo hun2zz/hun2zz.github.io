@@ -17,14 +17,14 @@
 
 .title {
   font-size: 1.5rem;
-  color: #732f20;
+  color: #f0f0f0;
   font-weight: 400;
   letter-spacing: 2px;
 }
 
 .border {
   width: 100%;
-  border-bottom: 1px solid #732f20;
+  border-bottom: 1px solid #f0f0f0;
   margin-bottom: 7rem;
 }
 
@@ -36,7 +36,7 @@
   display: flex;
   margin-bottom: 7rem;
   padding-bottom: 7rem;
-  border-bottom: 1px solid #732f20;
+  border-bottom: 1px solid #f0f0f0;
   &:last-child {
     margin-bottom: 0;
   }
@@ -52,8 +52,8 @@
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  border: 1px solid #732f20;
-  color: #732f20;
+  border: 1px solid #f0f0f0;
+  color: #f0f0f0;
   font-weight: 500;
 }
 
@@ -72,7 +72,7 @@
 
 .skillItem {
   font-size: 1.6rem;
-  color: #73706c;
+  color: #bebebe;
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
