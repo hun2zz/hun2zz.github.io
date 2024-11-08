@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  color: #732f20;
+  color: #f0f0f0;
   width: 100%;
 }
 
@@ -18,14 +18,14 @@
       padding-bottom: 1em;
       // padding-left: 16px;
       font-weight: 700;
-      color: #732f20;
+      color: #f0f0f0;
       text-transform: uppercase;
     }
     .qrCodeContainer {
       display: flex;
       gap: 2rem;
       img {
-        border: 2px solid #732f20;
+        border: 2px solid #f0f0f0;
       }
     }
   }
@@ -37,7 +37,7 @@
     margin-top: 100px;
     margin-bottom: 4rem;
     padding-bottom: 2rem;
-    border-bottom: 2px solid #732f20;
+    border-bottom: 2px solid #f0f0f0;
 
     p {
       // width: 25%;
@@ -62,7 +62,6 @@
   }
 }
 
-
 .footer {
   display: flex;
   // justify-content: space-between;
@@ -84,7 +83,7 @@
     // padding-left: 4rem;
     width: 50%;
     .locationTitle {
-      color: #732f20;
+      color: #f0f0f0;
     }
     p {
       // text-align: right;
@@ -95,7 +94,7 @@
       &:last-child {
         height: 100px;
         font-weight: 400;
-        color: #73706c;
+        color: #f0f0f0;
       }
 
       // margin-bottom: 1vh;
@@ -110,10 +109,10 @@
     padding-left: 2rem;
 
     .madeBy {
-      color: #732f20;
+      color: #f0f0f0;
     }
     p {
-      color: #73706c;
+      color: #f0f0f0;
       &:first-child {
         margin-bottom: 1em;
         text-transform: uppercase;
