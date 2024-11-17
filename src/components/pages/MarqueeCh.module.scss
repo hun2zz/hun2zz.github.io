@@ -3,7 +3,7 @@
 }
 
 .wrap {
-  color: #732f20;
+  color: #f2f2f2;
 }
 .textBox {
   display: flex;
@@ -19,16 +19,16 @@
   }
 
   .primaryEmphasis {
-    color: #0d0d0d; // 강조색 (원하는 색상으로 변경 가능)
+    color: #f2f2f2; // 강조색 (원하는 색상으로 변경 가능)
   }
 
   .secondaryEmphasis {
-    color: #732f20; // 두 번째 강조색 (로얄 블루)
+    color: #f2f2f2; // 두 번째 강조색 (로얄 블루)
   }
   .threeEmphasis {
-    color: #f2f2f2;
+    color: transparent;
     -webkit-text-stroke-width: 5px;
-    -webkit-text-stroke-color: #732f20;
+    -webkit-text-stroke-color: #f2f2f2;
   }
 }
 
@@ -36,7 +36,7 @@
   width: 20px;
   height: 20px;
   background-color: transparent;
-  border: 2px solid #732f20;
+  border: 2px solid #f2f2f2;
   margin-left: 1rem;
   position: relative;
   animation: rotate 4s linear infinite;
@@ -48,7 +48,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  border: 2px solid #732f20;
+  border: 2px solid #f2f2f2;
   left: -2px;
   top: -2px;
   animation: pulse 2s ease-out infinite;
